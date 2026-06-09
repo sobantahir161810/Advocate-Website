@@ -1,0 +1,1372 @@
+/* ============================================================
+   ADVOCATE JAVERIA — MOBILE-FIRST RESPONSIVE SYSTEM
+   Priority: Mobile (99% of users) → Tablet → Desktop
+   
+   Strategy: Write base styles for mobile (320px+),
+   then use min-width media queries to enhance upward.
+   ============================================================
+
+   BREAKPOINTS:
+   xs  — default  (320px+)   base mobile styles
+   sm  — 480px+              larger phones
+   md  — 768px+              tablet portrait
+   lg  — 1024px+             tablet landscape / small laptop
+   xl  — 1280px+             desktop
+   2xl — 1800px+             large desktop / TV
+   ============================================================ */
+
+/* ============================================================
+   GLOBAL MOBILE RESETS
+   ============================================================ */
+
+/* Prevent ALL horizontal overflow on every device */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* All images, videos, SVGs must stay in container */
+img, video, svg, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove oversized inline min-height on portrait SVGs */
+svg.welcome-img {
+  min-height: unset !important;
+}
+
+/* Fluid containers */
+.container {
+  width: 100%;
+  padding: 0 1.25rem;
+  margin: 0 auto;
+}
+
+.container-sm {
+  width: 100%;
+  padding: 0 1.25rem;
+  margin: 0 auto;
+}
+
+/* Base section padding — tight on mobile */
+section {
+  padding: 3.5rem 0;
+}
+
+/* ============================================================
+   TYPOGRAPHY — clamp() fluid scaling, mobile-first
+   ============================================================ */
+
+/* Reset base font size for small screens */
+:root {
+  font-size: 14px;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 6vw, 3rem);
+  line-height: 1.25;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.section-subtitle {
+  font-size: clamp(0.88rem, 3.5vw, 1.05rem);
+  line-height: 1.75;
+}
+
+.hero-heading {
+  font-size: clamp(2rem, 8vw, 5rem);
+  line-height: 1.1;
+  word-break: break-word;
+}
+
+.hero-sub {
+  font-size: clamp(0.88rem, 3.5vw, 1.1rem);
+  line-height: 1.8;
+}
+
+.welcome-intro {
+  font-size: clamp(1rem, 4vw, 1.3rem);
+}
+
+.welcome-text {
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  line-height: 1.85;
+}
+
+.featured-article-title {
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
+}
+
+.section-label {
+  font-size: clamp(0.6rem, 2.5vw, 0.72rem);
+}
+
+/* ============================================================
+   NAVBAR — Mobile-First
+   ============================================================ */
+
+.navbar {
+  height: 60px;
+  padding: 0 1.25rem;
+}
+
+/* Hide desktop menu on mobile */
+.nav-menu {
+  display: none;
+}
+
+/* Show hamburger on mobile */
+.hamburger {
+  display: flex;
+}
+
+.nav-logo-name {
+  font-size: 1.1rem;
+}
+
+.nav-logo-title {
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+}
+
+/* Mobile overlay menu */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  padding: 5rem 2rem 3rem;
+  overflow-y: auto;
+}
+
+.mobile-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  font-weight: 700;
+  color: var(--white-dim);
+  transition: color 0.3s;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--gold);
+}
+
+.mobile-nav-cta {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  padding: 0.9rem 2rem;
+  width: auto;
+  min-width: 200px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   HERO — Mobile-First
+   ============================================================ */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh; /* safe viewport height */
+  padding-top: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hide the image column on mobile — show it only on large screens */
+.hero-image-col {
+  display: none;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1.25rem 3rem;
+  z-index: 2;
+  width: 100%;
+}
+
+/* MOBILE HERO BACKGROUND — show photo as background on small screens */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/advocate-javeria.jpg');
+  background-size: cover;
+  background-position: top center;
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-badge {
+  justify-content: center;
+}
+
+.hero-btns {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.hero-btns .btn-primary,
+.hero-btns .btn-secondary,
+.hero-btns .btn-whatsapp {
+  width: 100%;
+  max-width: 340px;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  font-size: 0.82rem;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.hero-stat-num {
+  font-size: clamp(1.6rem, 6vw, 2rem);
+}
+
+.hero-stat-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+/* ============================================================
+   WELCOME SECTION — Mobile-First
+   ============================================================ */
+
+.welcome-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.welcome-img-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.welcome-img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: top center;
+  aspect-ratio: 3/4;
+  max-height: 420px;
+}
+
+/* Hide decorative elements on mobile */
+.welcome-img-border,
+.welcome-badge {
+  display: none;
+}
+
+.welcome-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.value-item {
+  padding: 0.85rem;
+  gap: 0.6rem;
+}
+
+.value-icon {
+  font-size: 1.1rem;
+}
+
+.value-name {
+  font-size: 0.78rem;
+}
+
+.value-desc {
+  font-size: 0.68rem;
+}
+
+/* ============================================================
+   STATS — Mobile-First
+   ============================================================ */
+
+.stats-section {
+  padding: 3rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.stat-item {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+/* Remove all ::after dividers on mobile */
+.stat-item::after {
+  display: none !important;
+}
+
+/* Add subtle border between cells instead */
+.stat-item:nth-child(1),
+.stat-item:nth-child(2) {
+  border-bottom: 1px solid var(--border);
+}
+.stat-item:nth-child(odd) {
+  border-right: 1px solid var(--border);
+}
+
+.stat-number {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+
+/* ============================================================
+   WHY CHOOSE — Mobile-First
+   ============================================================ */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.why-card {
+  padding: 1.75rem 1.5rem;
+}
+
+.why-number {
+  font-size: 3rem;
+}
+
+.why-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.why-title {
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  margin-bottom: 0.5rem;
+}
+
+.why-desc {
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   PRACTICE AREAS CARDS — Mobile-First
+   ============================================================ */
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.practice-card {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.practice-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.practice-name {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  margin-bottom: 0.5rem;
+}
+
+.practice-desc {
+  font-size: 0.83rem;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   CASE RESULT CARDS — Mobile-First
+   ============================================================ */
+
+.cases-grid,
+.cases-full-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.case-card-top {
+  padding: 1.4rem 1.5rem;
+}
+
+.case-card-body {
+  padding: 1.2rem 1.5rem;
+}
+
+.case-title {
+  font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+}
+
+.case-summary {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   TESTIMONIALS — Mobile-First
+   ============================================================ */
+
+.testimonial-slide {
+  padding: 0;
+}
+
+.testimonial-card {
+  padding: 1.75rem 1.25rem;
+}
+
+.testimonial-text {
+  font-size: clamp(0.95rem, 3.5vw, 1.2rem);
+  line-height: 1.75;
+}
+
+.testimonial-stars {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   INSIGHTS / BLOG — Mobile-First
+   ============================================================ */
+
+.insights-grid,
+.all-articles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.insight-img {
+  height: 180px;
+}
+
+.insight-body {
+  padding: 1.4rem;
+}
+
+.insight-title {
+  font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+  line-height: 1.4;
+}
+
+.insight-excerpt {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.featured-article {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.featured-article-img {
+  min-height: 220px;
+  max-height: 260px;
+}
+
+.featured-article-body {
+  padding: 2rem 1.5rem;
+}
+
+.filter-tabs {
+  gap: 0.5rem;
+  margin: 1.5rem 0 2.5rem;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.filter-tabs::-webkit-scrollbar { display: none; }
+
+.filter-tab {
+  font-size: 0.65rem;
+  padding: 0.4rem 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.search-bar-wrap {
+  flex-direction: row;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  max-width: 100%;
+}
+
+.search-bar {
+  font-size: 0.88rem;
+  padding: 0.8rem 1rem;
+}
+
+.search-btn {
+  padding: 0.8rem 1.2rem;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   FAQ — Mobile-First
+   ============================================================ */
+
+.faq-list {
+  margin-top: 2.5rem;
+}
+
+.faq-question {
+  padding: 1.1rem 1.25rem;
+}
+
+.faq-q-text {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.faq-answer-inner {
+  padding: 0 1.25rem 1.2rem;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+
+/* ============================================================
+   CTA BANNER — Mobile-First
+   ============================================================ */
+
+.cta-banner {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.cta-banner-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.cta-banner-btns .btn-primary,
+.cta-banner-btns .btn-whatsapp,
+.cta-banner-btns .btn-secondary {
+  width: 100%;
+  max-width: 340px;
+  justify-content: center;
+}
+
+/* ============================================================
+   ABOUT PAGE — Mobile-First
+   ============================================================ */
+
+.about-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2.5rem !important;
+}
+
+.about-img-col {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.about-img-col .welcome-img {
+  max-height: 380px;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.about-achievements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.achievement-card {
+  padding: 1rem 0.75rem;
+  text-align: center;
+}
+
+.achievement-num {
+  font-size: clamp(1.5rem, 6vw, 2rem);
+}
+
+.achievement-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.cert-card {
+  padding: 1.5rem;
+}
+
+.cert-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.cert-title {
+  font-size: 0.9rem;
+}
+
+.cert-sub {
+  font-size: 0.75rem;
+}
+
+/* ============================================================
+   TIMELINE — Mobile-First (single column left-rail)
+   ============================================================ */
+
+.timeline {
+  max-width: 100%;
+  padding: 0 0.25rem;
+  margin-top: 2.5rem;
+}
+
+/* Vertical line on left */
+.timeline::before {
+  left: 14px !important;
+  width: 1px;
+}
+
+/* Force 3-column grid: [gap] [dot] [content] */
+.timeline-item {
+  display: grid !important;
+  grid-template-columns: 0 28px 1fr !important;
+  margin-bottom: 2rem;
+  align-items: start;
+}
+
+/* All content in column 3 */
+.timeline-item .timeline-content {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  text-align: left !important;
+  padding-left: 1rem !important;
+  padding-right: 0 !important;
+}
+
+/* Dot always in column 2 */
+.timeline-item .timeline-dot {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+}
+
+/* Hide empty spacer column */
+.timeline-item .timeline-empty {
+  display: none !important;
+}
+
+.timeline-dot-inner {
+  width: 12px;
+  height: 12px;
+}
+
+.timeline-year {
+  font-size: 0.68rem;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-title {
+  font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-desc {
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   PRACTICE AREAS PAGE — Mobile-First
+   ============================================================ */
+
+.practice-section-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2rem !important;
+}
+
+/* Icon card always renders second (text content first) */
+.pa-icon-col {
+  order: 2;
+}
+
+.practice-section-grid .reveal-right {
+  order: 1;
+}
+
+/* Compact icon card on mobile */
+.pa-icon-col > div {
+  padding: 1.5rem !important;
+}
+
+.pa-icon-col > div > div:first-child {
+  font-size: 2.5rem !important;
+  margin-bottom: 0.6rem !important;
+}
+
+.pa-icon-col > div > div:nth-child(2) {
+  font-size: 1.2rem !important;
+}
+
+/* Hide description text inside icon card on mobile — it's covered in main text */
+.pa-icon-col > div > div:nth-child(4) {
+  display: none;
+}
+
+.practice-full-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.practice-full-header {
+  padding: 2rem 1.75rem 1.25rem;
+}
+
+.practice-full-body {
+  padding: 1.5rem 1.75rem 2rem;
+}
+
+.practice-full-name {
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+}
+
+.practice-full-desc {
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+
+.practice-list li {
+  font-size: 0.83rem;
+}
+
+/* ============================================================
+   APPOINTMENT PAGE — Mobile-First
+   ============================================================ */
+
+.appointment-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2rem !important;
+}
+
+.appt-info-card {
+  position: static !important;
+  padding: 1.5rem !important;
+}
+
+.appt-form-wrap {
+  padding: 1.5rem !important;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  font-size: 0.9rem;
+  padding: 0.85rem 1rem;
+}
+
+.form-divider {
+  font-size: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+/* Appointment CTA WhatsApp strip */
+.appointment-section [style*="display:flex;align-items:center;justify-content:space-between"] {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+}
+
+.process-steps { gap: 1rem; margin-top: 1.5rem; }
+.process-step  { gap: 0.75rem; align-items: flex-start; }
+.step-num      { width: 30px; height: 30px; font-size: 0.72rem; flex-shrink: 0; }
+.step-title    { font-size: 0.85rem; }
+.step-text     { font-size: 0.78rem; }
+
+.appt-features { gap: 0.75rem; margin-top: 1.5rem; }
+.appt-feature  { padding: 0.9rem; gap: 0.6rem; }
+.appt-feature-icon  { font-size: 1.2rem; }
+.appt-feature-title { font-size: 0.85rem; }
+.appt-feature-desc  { font-size: 0.75rem; }
+
+/* Office hours table */
+.office-hours-table td {
+  font-size: 0.75rem;
+  padding: 0.55rem 0;
+}
+
+/* Contact info section on appointment page */
+.contact-item {
+  padding: 1rem;
+  gap: 0.75rem;
+}
+
+.contact-item-icon  { width: 38px; height: 38px; font-size: 1rem; }
+.contact-item-label { font-size: 0.65rem; }
+.contact-item-value { font-size: 0.88rem; }
+.contact-item-sub   { font-size: 0.72rem; }
+
+/* ============================================================
+   PAGE HERO — Mobile-First
+   ============================================================ */
+
+.page-hero {
+  padding: 7rem 0 3rem;
+  text-align: center;
+}
+
+.page-hero::before {
+  font-size: 4rem;
+}
+
+.page-hero .section-title {
+  font-size: clamp(1.8rem, 7vw, 4rem);
+  max-width: 100%;
+}
+
+.page-hero .section-subtitle {
+  font-size: clamp(0.85rem, 3vw, 1rem);
+}
+
+.breadcrumb {
+  font-size: 0.75rem;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ============================================================
+   FOOTER — Mobile-First
+   ============================================================ */
+
+footer {
+  padding: 3.5rem 0 0;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.footer-logo-name  { font-size: 1.3rem; }
+.footer-logo-tag   { font-size: 0.6rem; letter-spacing: 0.18em; }
+.footer-about      { font-size: 0.83rem; line-height: 1.75; max-width: 100%; }
+
+.footer-col-title  { font-size: 0.68rem; letter-spacing: 0.18em; margin-bottom: 1.2rem; }
+.footer-links      { gap: 0.65rem; }
+.footer-link       { font-size: 0.85rem; }
+
+.footer-contact-item { font-size: 0.82rem; gap: 0.65rem; margin-bottom: 0.85rem; }
+
+.footer-bottom {
+  padding: 1.25rem 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.footer-copy { font-size: 0.75rem; }
+.footer-dev  { font-size: 0.72rem; }
+
+.footer-social { gap: 0.65rem; }
+.social-btn    { width: 36px; height: 36px; font-size: 0.85rem; }
+
+/* ============================================================
+   WHATSAPP FLOAT + BACK TO TOP — Mobile
+   ============================================================ */
+
+.whatsapp-float {
+  bottom: 1.25rem;
+  right: 1.25rem;
+}
+
+.whatsapp-btn {
+  width: 54px;
+  height: 54px;
+}
+
+.whatsapp-btn svg {
+  width: 26px;
+  height: 26px;
+}
+
+.back-to-top {
+  bottom: 5rem;
+  right: 1.25rem;
+  width: 40px;
+  height: 40px;
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   COOKIE BANNER — Mobile
+   ============================================================ */
+
+.cookie-banner {
+  padding: 1rem 1.25rem;
+  gap: 1rem;
+}
+
+.cookie-text { font-size: 0.75rem; }
+.cookie-btns { gap: 0.5rem; }
+.cookie-accept, .cookie-decline { padding: 0.45rem 1rem; font-size: 0.75rem; }
+
+/* ============================================================
+   BUTTONS — Mobile tap targets (min 44px)
+   ============================================================ */
+
+.btn-primary,
+.btn-secondary,
+.btn-whatsapp {
+  min-height: 48px;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.78rem;
+}
+
+.nav-cta {
+  font-size: 0.7rem;
+  padding: 0.55rem 1.2rem;
+}
+
+/* ============================================================
+   GENERAL SECTION LABEL + GOLD RULE
+   ============================================================ */
+
+.gold-rule {
+  width: 40px;
+  margin: 1.2rem auto;
+}
+
+/* ============================================================
+   LOADER — Mobile
+   ============================================================ */
+
+.page-loader { padding: 1.5rem; }
+.loader-logo { font-size: 1.25rem; }
+
+/* ============================================================
+   PAGE: 404
+   ============================================================ */
+
+.error-code { font-size: clamp(5rem, 20vw, 12rem); }
+.error-title { font-size: clamp(1.3rem, 5vw, 2.5rem); }
+.error-subtitle { font-size: 0.9rem; padding: 0 1rem; }
+.error-links {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+.error-links .btn-primary,
+.error-links .btn-secondary {
+  width: 100%;
+  max-width: 320px;
+  justify-content: center;
+}
+
+/* ============================================================
+   SCALE UP: LARGER PHONES 480px+
+   ============================================================ */
+
+@media (min-width: 480px) {
+  :root { font-size: 14.5px; }
+
+  .container { padding: 0 1.5rem; }
+
+  .hero-content { padding: 3.5rem 2rem 3.5rem; }
+
+  .welcome-img-wrap { max-width: 400px; }
+  .welcome-img { max-height: 460px; }
+
+  .about-img-col { max-width: 380px; }
+
+  .practice-grid { grid-template-columns: 1fr 1fr; }
+  .insights-grid { grid-template-columns: 1fr 1fr; }
+  .all-articles-grid { grid-template-columns: 1fr 1fr; }
+  .certifications-grid { grid-template-columns: 1fr 1fr; }
+
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================================
+   SCALE UP: TABLET PORTRAIT 768px+
+   ============================================================ */
+
+@media (min-width: 768px) {
+  :root { font-size: 15px; }
+
+  .container { padding: 0 2rem; max-width: 760px; }
+  .container-sm { max-width: 700px; padding: 0 2rem; }
+
+  section { padding: 5rem 0; }
+
+  /* Nav */
+  .navbar { height: 68px; padding: 0 2rem; }
+  .nav-logo-name { font-size: 1.2rem; }
+
+  /* Hero */
+  .hero { padding-top: 68px; }
+  .hero-content { padding: 4.5rem 2.5rem 4rem; max-width: 640px; }
+  .hero-btns { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+  .hero-btns .btn-primary,
+  .hero-btns .btn-secondary,
+  .hero-btns .btn-whatsapp { width: auto; max-width: none; }
+
+  /* Welcome */
+  .welcome-values { grid-template-columns: 1fr 1fr; }
+  .welcome-img-wrap { max-width: 420px; }
+  .welcome-img { max-height: 500px; }
+
+  /* About */
+  .about-img-col { max-width: 400px; }
+  .certifications-grid { grid-template-columns: 1fr 1fr 1fr; }
+
+  /* Grids */
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .practice-grid { grid-template-columns: 1fr 1fr; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .cases-full-grid { grid-template-columns: 1fr; }
+  .insights-grid { grid-template-columns: 1fr 1fr; }
+  .all-articles-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  .stat-item { border-right: 1px solid var(--border); }
+  .stat-item:nth-child(4) { border-right: none; }
+  .stat-item:nth-child(1),
+  .stat-item:nth-child(2) { border-bottom: none; }
+  .stat-item:nth-child(odd) { border-right: 1px solid var(--border); }
+  .stat-item:last-child { border-right: none; }
+
+  /* Timeline still single column at 768 */
+
+  /* Appointment */
+  .form-row { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+  /* Footer */
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .footer-brand { grid-column: 1 / -1; }
+
+  /* CTA */
+  .cta-banner-btns { flex-direction: row; justify-content: center; }
+  .cta-banner-btns .btn-primary,
+  .cta-banner-btns .btn-whatsapp,
+  .cta-banner-btns .btn-secondary { width: auto; max-width: none; }
+
+  /* Featured article */
+  .featured-article-img { max-height: none; min-height: 280px; }
+
+  /* Whatsapp + back to top */
+  .whatsapp-float { bottom: 2rem; right: 2rem; }
+  .whatsapp-btn { width: 58px; height: 58px; }
+  .back-to-top { bottom: 6rem; right: 2rem; }
+}
+
+/* ============================================================
+   SCALE UP: TABLET LANDSCAPE / SMALL LAPTOP 1024px+
+   ============================================================ */
+
+@media (min-width: 1024px) {
+  :root { font-size: 15px; }
+
+  .container { max-width: 1024px; padding: 0 2rem; }
+  .container-sm { max-width: 860px; }
+
+  section { padding: 6rem 0; }
+
+  /* Show desktop nav */
+  .nav-menu { display: flex; }
+  .hamburger { display: none; }
+  .navbar { height: 72px; padding: 0 2rem; }
+
+  /* Hero — switch to two-column grid */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    padding-top: 72px;
+  }
+  /* Remove mobile background photo */
+  .hero::before { display: none; }
+
+  .hero-image-col { display: block; }
+  .hero-content {
+    align-items: flex-start;
+    text-align: left;
+    padding: 4rem 3rem 4rem 4vw;
+    max-width: none;
+  }
+  .hero-badge { justify-content: flex-start; }
+  .hero-btns { justify-content: flex-start; flex-direction: row; flex-wrap: wrap; }
+  .hero-btns .btn-primary,
+  .hero-btns .btn-secondary,
+  .hero-btns .btn-whatsapp { width: auto; max-width: none; }
+  .hero-stats { justify-content: flex-start; }
+
+  /* Welcome — two columns */
+  .welcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .welcome-img-wrap { max-width: 100%; margin: 0; }
+  .welcome-img { max-height: none; }
+  .welcome-img-border { display: block; }
+
+  /* About */
+  .about-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1.2fr !important;
+    flex-direction: unset !important;
+    gap: 4rem !important;
+    align-items: start;
+  }
+  .about-img-col { max-width: 100%; margin: 0; }
+  .about-img-col .welcome-img { max-height: none; }
+  .welcome-badge { display: flex; }
+
+  /* Practice sections — two columns alternating */
+  .practice-section-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1.6fr !important;
+    flex-direction: unset !important;
+    gap: 3.5rem !important;
+    align-items: start;
+  }
+  .pa-icon-col { order: unset; }
+  .practice-section-grid .reveal-right { order: unset; }
+  .pa-icon-col > div { padding: 2.5rem !important; }
+  .pa-icon-col > div > div:first-child { font-size: 3.5rem !important; }
+  .pa-icon-col > div > div:nth-child(2) { font-size: 1.5rem !important; }
+  .pa-icon-col > div > div:nth-child(4) { display: block; }
+
+  /* Grids */
+  .why-grid { grid-template-columns: repeat(3, 1fr); }
+  .practice-grid { grid-template-columns: repeat(3, 1fr); }
+  .cases-grid { grid-template-columns: repeat(3, 1fr); }
+  .cases-full-grid { grid-template-columns: 1fr 1fr; }
+  .insights-grid { grid-template-columns: repeat(3, 1fr); }
+  .all-articles-grid { grid-template-columns: repeat(3, 1fr); }
+  .certifications-grid { grid-template-columns: repeat(3, 1fr); }
+  .practice-full-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Timeline — two sided */
+  .timeline { max-width: 800px; margin: 3.5rem auto 0; }
+  .timeline::before { left: 50% !important; transform: translateX(-50%); }
+  .timeline-item {
+    display: grid !important;
+    grid-template-columns: 1fr 60px 1fr !important;
+    margin-bottom: 3rem;
+  }
+  .timeline-item:nth-child(odd) .timeline-content {
+    grid-column: 1 !important; grid-row: 1 !important;
+    text-align: right !important;
+    padding-right: 2.5rem !important; padding-left: 0 !important;
+  }
+  .timeline-item:nth-child(odd) .timeline-dot   { grid-column: 2 !important; }
+  .timeline-item:nth-child(odd) .timeline-empty { grid-column: 3 !important; display: block !important; }
+  .timeline-item:nth-child(even) .timeline-empty  { grid-column: 1 !important; display: block !important; }
+  .timeline-item:nth-child(even) .timeline-dot    { grid-column: 2 !important; }
+  .timeline-item:nth-child(even) .timeline-content {
+    grid-column: 3 !important; grid-row: 1 !important;
+    text-align: left !important;
+    padding-left: 2.5rem !important; padding-right: 0 !important;
+  }
+  .timeline-dot-inner { width: 14px; height: 14px; }
+
+  /* Appointment — two columns */
+  .appointment-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1.5fr !important;
+    flex-direction: unset !important;
+    gap: 4rem !important;
+    align-items: start;
+  }
+  .appt-info-card { position: sticky !important; top: 100px; }
+  .appt-form-wrap { padding: 2.5rem !important; }
+  .form-row { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+  /* Footer — 4 columns */
+  .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3.5rem; }
+  .footer-brand { grid-column: auto; }
+
+  /* Featured article — two columns */
+  .featured-article { display: grid; grid-template-columns: 1fr 1fr; }
+  .featured-article-img { min-height: 380px; }
+}
+
+/* ============================================================
+   SCALE UP: DESKTOP 1280px+
+   ============================================================ */
+
+@media (min-width: 1280px) {
+  :root { font-size: 16px; }
+
+  .container { max-width: 1280px; padding: 0 2.5rem; }
+  .container-sm { max-width: 900px; }
+
+  section { padding: 7rem 0; }
+
+  .navbar { padding: 0 2.5rem; }
+  .hero-content { padding: 4rem 4rem 4rem 8vw; }
+
+  .welcome-grid { gap: 6rem; }
+
+  .about-grid {
+    grid-template-columns: 1fr 1.2fr !important;
+    gap: 5rem !important;
+  }
+
+  .welcome-badge { display: flex; }
+  .welcome-img-border { display: block; }
+
+  .why-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .cases-grid { grid-template-columns: repeat(3, 1fr); }
+  .cases-full-grid { grid-template-columns: 1fr 1fr; }
+  .insights-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .footer-top { gap: 4rem; }
+
+  /* Practice section spacing */
+  .practice-section-grid { gap: 4rem !important; }
+  .pa-icon-col > div { padding: 3rem !important; }
+}
+
+/* ============================================================
+   SCALE UP: LARGE DESKTOP / TV 1800px+
+   ============================================================ */
+
+@media (min-width: 1800px) {
+  .container { max-width: 1600px; }
+  .hero-content { padding-left: 10vw; }
+  .hero-heading { font-size: 5.5rem; }
+}
+
+/* ============================================================
+   LANDSCAPE PHONE FIX
+   ============================================================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero { min-height: auto; padding: 70px 0 2.5rem; }
+  .hero-content { padding: 2rem 2rem; }
+  .hero-heading { font-size: 2rem; }
+  .mobile-overlay {
+    overflow-y: auto;
+    padding: 4.5rem 2rem 2rem;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+  .mobile-nav-link { font-size: 1.4rem; }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+  .navbar, .whatsapp-float, footer, .hero-particles,
+  .hamburger, .mobile-overlay, .page-loader,
+  .back-to-top, .cookie-banner { display: none; }
+  body { background: #fff; color: #111; }
+  section { padding: 1.5rem 0; page-break-inside: avoid; }
+}
