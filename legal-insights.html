@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Legal insights, articles, and guides by Advocate Javeria on Pakistani law — Family Law, Property Rights, Criminal Defense, Women's Rights, and Corporate Law.">
+  <meta name="keywords" content="Legal Insights Pakistan, Family Law Articles, Property Rights Pakistan, Women Rights Law, Criminal Defense Guide">
+  <title>Legal Insights — Advocate Javeria | Know Your Rights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* ---- INSIGHTS PAGE EXTRA STYLES ---- */
+    .featured-article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 4rem;
+      transition: var(--transition);
+    }
+    .featured-article:hover {
+      border-color: rgba(201,168,76,0.25);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .featured-article-img {
+      min-height: 400px;
+      background: var(--surface);
+      position: relative;
+      overflow: hidden;
+    }
+    .featured-article-img svg {
+      width: 100%; height: 100%; position: absolute; inset: 0;
+    }
+    .featured-article-body {
+      padding: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .article-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2rem;
+      background: rgba(201,168,76,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.2);
+      margin-bottom: 1rem;
+    }
+    .featured-article-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    .featured-article-excerpt {
+      font-size: 0.95rem;
+      color: var(--silver);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .article-meta-item { display: flex; align-items: center; gap: 0.4rem; }
+    .all-articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1.5rem;
+    }
+    @media(max-width:900px){ .featured-article{grid-template-columns:1fr;} .featured-article-img{min-height:250px;} }
+    @media(max-width:768px){ .all-articles-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:580px){ .all-articles-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<!-- PAGE LOADER -->
+<div class="page-loader" id="pageLoader" aria-hidden="true">
+  <div class="loader-logo">Advocate Javeria<span>Legal Counsel · Peshawar</span></div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-tagline">Loading…</div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-name">Advocate Javeria</span>
+    <span class="nav-logo-title">Legal Counsel · Peshawar</span>
+  </a>
+  <ul class="nav-menu" role="list">
+    <li><a href="index.html"           class="nav-link">Home</a></li>
+    <li><a href="about.html"           class="nav-link">About</a></li>
+    <li><a href="practice-areas.html"  class="nav-link">Practice Areas</a></li>
+    <li><a href="case-results.html"    class="nav-link">Case Results</a></li>
+    <li><a href="legal-insights.html"  class="nav-link active">Legal Insights</a></li>
+    <li><a href="appointment.html"     class="nav-cta">Book Consultation</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-overlay" role="dialog" aria-modal="true">
+  <a href="index.html"          class="mobile-nav-link">Home</a>
+  <a href="about.html"          class="mobile-nav-link">About</a>
+  <a href="practice-areas.html" class="mobile-nav-link">Practice Areas</a>
+  <a href="case-results.html"   class="mobile-nav-link">Case Results</a>
+  <a href="legal-insights.html" class="mobile-nav-link active">Legal Insights</a>
+  <a href="appointment.html"    class="btn-primary mobile-nav-cta">Book Consultation</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero" data-title="INSIGHTS" aria-label="Page header">
+  <div class="container">
+    <div class="section-label">Legal Education</div>
+    <h1 class="section-title">Know Your <em>Rights</em></h1>
+    <p class="section-subtitle">
+      Authoritative legal articles, guides, and insights on Pakistani law — 
+      written to educate, empower, and inform every citizen.
+    </p>
+
+    <!-- Search Bar -->
+    <div class="search-bar-wrap" role="search">
+      <input type="search" class="search-bar" placeholder="Search articles — Family Law, Property, Criminal..." aria-label="Search legal articles">
+      <button class="search-btn" aria-label="Search">Search</button>
+    </div>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Legal Insights</span>
+    </nav>
+  </div>
+</div>
+
+<!-- CATEGORY FILTERS -->
+<div style="background:var(--surface);border-bottom:1px solid var(--border);padding:1.5rem 0;">
+  <div class="container">
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-cat="all">All Articles</button>
+      <button class="filter-tab" data-cat="family">Family Law</button>
+      <button class="filter-tab" data-cat="property">Property Rights</button>
+      <button class="filter-tab" data-cat="criminal">Criminal Law</button>
+      <button class="filter-tab" data-cat="women">Women's Rights</button>
+      <button class="filter-tab" data-cat="corporate">Corporate Law</button>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED ARTICLE -->
+<section aria-labelledby="featured-heading" style="background:var(--black);">
+  <div class="container">
+    <div class="section-label reveal">Featured Article</div>
+    <article class="featured-article reveal" data-cat="women">
+      <div class="featured-article-img">
+        <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="featGrad" cx="50%" cy="50%" r="70%">
+              <stop offset="0%" stop-color="#1a1208"/>
+              <stop offset="100%" stop-color="#080808"/>
+            </radialGradient>
+          </defs>
+          <rect width="600" height="400" fill="url(#featGrad)"/>
+          <ellipse cx="300" cy="200" rx="280" ry="180" fill="rgba(201,168,76,0.04)"/>
+          <!-- Scales of justice illustration -->
+          <line x1="300" y1="80" x2="300" y2="320" stroke="rgba(201,168,76,0.4)" stroke-width="2"/>
+          <line x1="160" y1="140" x2="440" y2="140" stroke="rgba(201,168,76,0.4)" stroke-width="2"/>
+          <line x1="160" y1="140" x2="160" y2="200" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/>
+          <line x1="440" y1="140" x2="440" y2="200" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/>
+          <ellipse cx="160" cy="205" rx="50" ry="20" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+          <ellipse cx="440" cy="205" rx="50" ry="20" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+          <circle cx="300" cy="75" r="10" fill="rgba(201,168,76,0.5)"/>
+          <!-- Female silhouette -->
+          <ellipse cx="300" cy="240" rx="25" ry="30" fill="rgba(201,168,76,0.08)"/>
+          <rect x="270" y="268" width="60" height="70" rx="5" fill="rgba(201,168,76,0.06)"/>
+          <text x="300" y="370" text-anchor="middle" font-family="serif" font-size="13"
+                fill="rgba(201,168,76,0.4)" letter-spacing="2">WOMEN'S LEGAL RIGHTS · PAKISTAN</text>
+        </svg>
+      </div>
+      <div class="featured-article-body">
+        <span class="article-tag">Women's Rights</span>
+        <h2 class="featured-article-title" id="featured-heading">
+          The Complete Guide to Women's Legal Rights in Pakistan — 2025 Edition
+        </h2>
+        <div class="article-meta">
+          <div class="article-meta-item">📅 <span>March 8, 2025</span></div>
+          <div class="article-meta-item">⏱️ <span>12 min read</span></div>
+          <div class="article-meta-item">👁️ <span>4,200 views</span></div>
+        </div>
+        <p class="featured-article-excerpt">
+          Pakistani women are protected by a robust (if often misunderstood) framework of legal rights 
+          covering property ownership, inheritance, divorce, workplace protections, and constitutional 
+          guarantees. This comprehensive guide explains what the law provides and how to enforce it.
+        </p>
+        <a href="#article-women" class="btn-primary">Read Full Article</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ALL ARTICLES -->
+<section aria-labelledby="articles-heading" style="background:var(--deep);">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">All Articles</div>
+      <h2 class="section-title" id="articles-heading">Legal <em>Knowledge Base</em></h2>
+    </div>
+
+    <div class="all-articles-grid" style="margin-top:3rem;" id="articles-container">
+
+      <!-- Article 1 -->
+      <article class="insight-card reveal delay-1" data-cat="family">
+        <div class="insight-img">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="400" height="200" fill="#1a1208"/>
+            <ellipse cx="200" cy="100" rx="150" ry="80" fill="rgba(201,168,76,0.05)"/>
+            <text x="200" y="115" text-anchor="middle" font-size="70" fill="rgba(201,168,76,0.12)">👨‍👩‍👧</text>
+          </svg>
+          <span class="insight-cat">Family Law</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-date">📅 January 15, 2025 &nbsp;·&nbsp; ⏱️ 8 min read</div>
+          <h3 class="insight-title">Understanding Divorce in Pakistan: Talaq, Khul'a &amp; Mutual Divorce</h3>
+          <p class="insight-excerpt">A step-by-step breakdown of Pakistan's three divorce procedures — who initiates them, how courts handle them, and what rights each spouse retains.</p>
+          <a href="#" class="insight-link">Read Article →</a>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="insight-card reveal delay-2" data-cat="property">
+        <div class="insight-img">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="400" height="200" fill="#0f1208"/>
+            <ellipse cx="200" cy="100" rx="150" ry="80" fill="rgba(201,168,76,0.05)"/>
+            <text x="200" y="115" text-anchor="middle" font-size="70" fill="rgba(201,168,76,0.12)">🏠</text>
+          </svg>
+          <span class="insight-cat">Property Law</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-date">📅 February 3, 2025 &nbsp;·&nbsp; ⏱️ 10 min read</div>
+          <h3 class="insight-title">How to Protect Your Property Title in Pakistan Against Fraud</h3>
+          <p class="insight-excerpt">Land fraud is among Pakistan's most common legal crimes. Learn how to verify title, secure your ownership, and what to do if fraud occurs.</p>
+          <a href="#" class="insight-link">Read Article →</a>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="insight-card reveal delay-3" data-cat="women">
+        <div class="insight-img">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="400" height="200" fill="#0a120f"/>
+            <ellipse cx="200" cy="100" rx="150" ry="80" fill="rgba(201,168,76,0.05)"/>
+            <text x="200" y="115" text-anchor="middle" font-size="70" fill="rgba(201,168,76,0.12)">⚖️</text>
+          </svg>
+          <span class="insight-cat">Women's Rights</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-date">📅 March 8, 2025 &nbsp;·&nbsp; ⏱️ 12 min read</div>
+          <h3 class="insight-title">Legal Rights of Women in Pakistan: Property, Inheritance &amp; Protection</h3>
+          <p class="insight-excerpt">Pakistani law gives women substantial rights that are often unknown or unenforced. This guide covers inheritance shares, property ownership, and workplace protections.</p>
+          <a href="#" class="insight-link">Read Article →</a>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="insight-card reveal delay-1" data-cat="criminal">
+        <div class="insight-img">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="400" height="200" fill="#0f0a12"/>
+            <ellipse cx="200" cy="100" rx="150" ry="80" fill="rgba(201,168,76,0.05)"/>
+            <text x="200" y="115" text-anchor="middle" font-size="70" fill="rgba(201,168,76,0.12)">🔒</text>
+          </svg>
+          <span class="insight-cat">Criminal Law</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-date">📅 April 2, 2025 &nbsp;·&nbsp; ⏱️ 9 min read</div>
+          <h3 class="insight-title">What to Do When an FIR Is Filed Against You in Pakistan</h3>
+          <p class="insight-excerpt">Being named in an FIR is frightening — but your rights begin immediately. Here is exactly what steps to take, what not to say, and when to call a lawyer.</p>
+          <a href="#" class="insight-link">Read Article →</a>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="insight-card reveal delay-2" data-cat="corporate">
+        <div class="insight-img">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="400" height="200" fill="#0a0f12"/>
+            <ellipse cx="200" cy="100" rx="150" ry="80" fill="rgba(201,168,76,0.05)"/>
+            <text x="200" y="115" text-anchor="middle" font-size="70" fill="rgba(201,168,76,0.12)">🏢</text>
+          </svg>
+          <span class="insight-cat">Corporate Law</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-date">📅 April 20, 2025 &nbsp;·&nbsp; ⏱️ 7 min read</div>
+          <h3 class="insight-title">Corporate Legal Protection for Small Businesses in Pakistan</h3>
+          <p class="insight-excerpt">Small businesses are most vulnerable to legal disputes — without contracts, they lose. A guide to essential legal protections every Pakistani SME needs.</p>
+          <a href="#" class="insight-link">Read Article →</a>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="insight-card reveal delay-3" data-cat="family">
+        <div class="insight-img">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="400" height="200" fill="#120a08"/>
+            <ellipse cx="200" cy="100" rx="150" ry="80" fill="rgba(201,168,76,0.05)"/>
+            <text x="200" y="115" text-anchor="middle" font-size="70" fill="rgba(201,168,76,0.12)">👶</text>
+          </svg>
+          <span class="insight-cat">Family Law</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-date">📅 May 5, 2025 &nbsp;·&nbsp; ⏱️ 11 min read</div>
+          <h3 class="insight-title">Child Custody in Pakistan: A Complete Parent's Legal Guide</h3>
+          <p class="insight-excerpt">How Pakistani family courts decide custody, the role of the child's best interest principle, and how mothers and fathers can strengthen their case.</p>
+          <a href="#" class="insight-link">Read Article →</a>
+        </div>
+      </article>
+
+      <!-- Article 7 -->
+      <article class="insight-card reveal delay-1" data-cat="criminal">
+        <div class="insight-img">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="400" height="200" fill="#0d1212"/>
+            <ellipse cx="200" cy="100" rx="150" ry="80" fill="rgba(201,168,76,0.05)"/>
+            <text x="200" y="115" text-anchor="middle" font-size="70" fill="rgba(201,168,76,0.12)">📱</text>
+          </svg>
+          <span class="insight-cat">Criminal Law</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-date">📅 May 18, 2025 &nbsp;·&nbsp; ⏱️ 8 min read</div>
+          <h3 class="insight-title">PECA 2016: Understanding Pakistan's Cybercrime Law &amp; Your Rights</h3>
+          <p class="insight-excerpt">Social media posts, messages, and digital activity can trigger PECA charges. Know what is illegal, what is protected speech, and your legal defenses.</p>
+          <a href="#" class="insight-link">Read Article →</a>
+        </div>
+      </article>
+
+      <!-- Article 8 -->
+      <article class="insight-card reveal delay-2" data-cat="property">
+        <div class="insight-img">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="400" height="200" fill="#0f1208"/>
+            <ellipse cx="200" cy="100" rx="150" ry="80" fill="rgba(201,168,76,0.05)"/>
+            <text x="200" y="115" text-anchor="middle" font-size="70" fill="rgba(201,168,76,0.12)">📋</text>
+          </svg>
+          <span class="insight-cat">Property Law</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-date">📅 June 1, 2025 &nbsp;·&nbsp; ⏱️ 6 min read</div>
+          <h3 class="insight-title">Inheritance Property in Pakistan: How to Legally Transfer After Death</h3>
+          <p class="insight-excerpt">The legal process for transferring inherited property in Pakistan — mutation, succession certificates, and how to avoid the most common disputes.</p>
+          <a href="#" class="insight-link">Read Article →</a>
+        </div>
+      </article>
+
+      <!-- Article 9 -->
+      <article class="insight-card reveal delay-3" data-cat="women">
+        <div class="insight-img">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="400" height="200" fill="#0a120f"/>
+            <ellipse cx="200" cy="100" rx="150" ry="80" fill="rgba(201,168,76,0.05)"/>
+            <text x="200" y="115" text-anchor="middle" font-size="70" fill="rgba(201,168,76,0.12)">🛡️</text>
+          </svg>
+          <span class="insight-cat">Women's Rights</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-date">📅 June 15, 2025 &nbsp;·&nbsp; ⏱️ 9 min read</div>
+          <h3 class="insight-title">Domestic Violence in Pakistan: Legal Protections &amp; How to Report</h3>
+          <p class="insight-excerpt">Pakistan's Domestic Violence Acts, protection orders, and the legal process for seeking safety — explained clearly for survivors and supporters.</p>
+          <a href="#" class="insight-link">Read Article →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER / CONSULT CTA -->
+<div class="cta-banner reveal">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;">Personal Legal Advice</div>
+    <h2 class="section-title">Your Situation Is <em>Unique</em></h2>
+    <p class="section-subtitle">
+      Articles give general guidance — but your case deserves personalized legal analysis. 
+      Book a consultation for advice specific to your situation.
+    </p>
+    <div class="gold-rule"></div>
+    <div class="cta-banner-btns">
+      <a href="appointment.html" class="btn-primary">Book Consultation</a>
+      <a href="https://wa.me/923160990069" class="btn-whatsapp" target="_blank" rel="noopener">WhatsApp Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Advocate Javeria</div>
+        <div class="footer-logo-tag">Legal Counsel · Peshawar, Pakistan</div>
+        <p class="footer-about">A premier legal practice committed to justice, integrity, and excellence across Pakistan's courts. Your rights, fiercely defended.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+          <a href="https://wa.me/923160990069" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html"           class="footer-link">Home</a></li>
+          <li><a href="about.html"           class="footer-link">About Advocate Javeria</a></li>
+          <li><a href="practice-areas.html"  class="footer-link">Practice Areas</a></li>
+          <li><a href="case-results.html"    class="footer-link">Case Results</a></li>
+          <li><a href="legal-insights.html"  class="footer-link">Legal Insights</a></li>
+          <li><a href="appointment.html"     class="footer-link">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Practice Areas</h3>
+        <ul class="footer-links">
+          <li><a href="practice-areas.html" class="footer-link">Family Law</a></li>
+          <li><a href="practice-areas.html" class="footer-link">Criminal Defense</a></li>
+          <li><a href="practice-areas.html" class="footer-link">Civil Litigation</a></li>
+          <li><a href="practice-areas.html" class="footer-link">Property Disputes</a></li>
+          <li><a href="practice-areas.html" class="footer-link">Corporate Law</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Contact</h3>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span>Peshawar, Khyber Pakhtunkhwa, Pakistan</span></div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📧</span><span>contact@advocatejaveria.com</span></div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span>+92 316 0990069</span></div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">🕐</span><span>Mon – Sat: 9:00 AM – 7:00 PM</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Advocate Javeria. All rights reserved. Peshawar, Pakistan.</p>
+      <p class="footer-dev">Designed &amp; Developed by <a href="https://sneakycoders.com" target="_blank" rel="noopener noreferrer">sneakycoders.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div class="whatsapp-float" aria-label="Contact via WhatsApp">
+  <span class="whatsapp-tooltip">Chat with Advocate Javeria</span>
+  <a href="https://wa.me/923160990069?text=Hello%20Advocate%20Javeria%2C%20I%20need%20legal%20consultation."
+     class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/main.js"></script>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie notice">
+  <p class="cookie-text">
+    This website uses cookies to improve your experience and provide essential functionality. 
+    All data is handled with strict confidentiality per our privacy policy.
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" id="cookieAccept">Accept</button>
+    <button class="cookie-decline" id="cookieDecline">Decline</button>
+  </div>
+</div>
+
+
+<script>
+  // Page Loader
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var loader = document.getElementById('pageLoader');
+      if (loader) loader.classList.add('hidden');
+    }, 1600);
+  });
+
+  // Back to Top
+  var btt = document.getElementById('backToTop');
+  if (btt) {
+    window.addEventListener('scroll', function() {
+      btt.classList.toggle('visible', window.scrollY > 400);
+    }, {passive: true});
+    btt.addEventListener('click', function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  }
+
+  // Cookie Banner
+  var banner = document.getElementById('cookieBanner');
+  var accepted = localStorage.getItem('cookie_consent');
+  if (banner && !accepted) {
+    setTimeout(function() { banner.classList.add('show'); }, 2000);
+  }
+  document.getElementById('cookieAccept')?.addEventListener('click', function() {
+    localStorage.setItem('cookie_consent', '1');
+    banner.classList.remove('show');
+  });
+  document.getElementById('cookieDecline')?.addEventListener('click', function() {
+    banner.classList.remove('show');
+  });
+</script>
+
+</body>
+</html>

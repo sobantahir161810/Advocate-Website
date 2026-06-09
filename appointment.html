@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book a legal consultation with Advocate Javeria in Peshawar. Online appointment form or instant WhatsApp booking — +92 316 0990069.">
+  <meta name="keywords" content="Book Lawyer Peshawar, Legal Consultation Pakistan, Appointment Advocate Javeria, WhatsApp Lawyer Pakistan">
+  <title>Book Appointment — Advocate Javeria | Legal Consultation Peshawar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* ---- APPOINTMENT PAGE EXTRAS ---- */
+    .office-hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+    .office-hours-table tr:not(:last-child) {
+      border-bottom: 1px solid var(--border);
+    }
+    .office-hours-table td {
+      padding: 0.7rem 0;
+      font-size: 0.85rem;
+      color: var(--silver);
+    }
+    .office-hours-table td:last-child {
+      text-align: right;
+      color: var(--white-dim);
+      font-weight: 500;
+    }
+    .office-hours-table .today td {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .map-placeholder {
+      width: 100%;
+      height: 200px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 1.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .map-placeholder svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .step-text { font-size: 0.85rem; color: var(--silver); line-height: 1.6; }
+    .step-title { font-weight: 600; color: var(--white-dim); font-size: 0.88rem; margin-bottom: 0.2rem; }
+  </style>
+</head>
+<body>
+
+<!-- PAGE LOADER -->
+<div class="page-loader" id="pageLoader" aria-hidden="true">
+  <div class="loader-logo">Advocate Javeria<span>Legal Counsel · Peshawar</span></div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-tagline">Loading…</div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-name">Advocate Javeria</span>
+    <span class="nav-logo-title">Legal Counsel · Peshawar</span>
+  </a>
+  <ul class="nav-menu" role="list">
+    <li><a href="index.html"           class="nav-link">Home</a></li>
+    <li><a href="about.html"           class="nav-link">About</a></li>
+    <li><a href="practice-areas.html"  class="nav-link">Practice Areas</a></li>
+    <li><a href="case-results.html"    class="nav-link">Case Results</a></li>
+    <li><a href="legal-insights.html"  class="nav-link">Legal Insights</a></li>
+    <li><a href="appointment.html"     class="nav-cta">Book Consultation</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-overlay" role="dialog" aria-modal="true">
+  <a href="index.html"          class="mobile-nav-link">Home</a>
+  <a href="about.html"          class="mobile-nav-link">About</a>
+  <a href="practice-areas.html" class="mobile-nav-link">Practice Areas</a>
+  <a href="case-results.html"   class="mobile-nav-link">Case Results</a>
+  <a href="legal-insights.html" class="mobile-nav-link">Legal Insights</a>
+  <a href="appointment.html"    class="btn-primary mobile-nav-cta">Book Consultation</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero" data-title="BOOK" aria-label="Page header">
+  <div class="container">
+    <div class="section-label">Get In Touch</div>
+    <h1 class="section-title">Book a <em>Consultation</em></h1>
+    <p class="section-subtitle">
+      Take the first step toward justice. Book a confidential consultation 
+      and get expert legal guidance tailored to your situation.
+    </p>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Book Appointment</span>
+    </nav>
+  </div>
+</div>
+
+<!-- APPOINTMENT SECTION -->
+<section class="appointment-section" aria-labelledby="appt-heading">
+  <div class="container">
+    <div class="appointment-grid">
+
+      <!-- LEFT: Info Panel -->
+      <div>
+        <!-- Info Card -->
+        <div class="appt-info-card reveal-left">
+          <div class="section-label" style="margin-bottom:1rem;">Consultation Details</div>
+          <h2 class="section-title" id="appt-heading" style="font-size:1.6rem;">
+            Your First Step to <em>Justice</em>
+          </h2>
+          <p style="font-size:0.88rem;color:var(--silver);line-height:1.8;margin-bottom:1.5rem;">
+            Every consultation is strictly confidential. Advocate Javeria personally reviews 
+            your case and provides clear, honest legal advice — no vague answers, no unnecessary 
+            complexity.
+          </p>
+
+          <!-- Process Steps -->
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <div>
+                <div class="step-title">Submit Your Request</div>
+                <div class="step-text">Fill the form or message us on WhatsApp with your case details.</div>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <div>
+                <div class="step-title">Confirmation Call</div>
+                <div class="step-text">We confirm your appointment within 2 hours during office hours.</div>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <div>
+                <div class="step-title">Consultation Meeting</div>
+                <div class="step-text">In-person at our Peshawar office, or via phone/video call.</div>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <div>
+                <div class="step-title">Legal Strategy Plan</div>
+                <div class="step-text">Receive a clear plan, realistic timeline, and fee structure.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="appt-info-card reveal-left delay-2" style="margin-top:1.5rem;">
+          <div class="section-label" style="margin-bottom:1rem;">Contact Information</div>
+
+          <div class="contact-items">
+            <div class="contact-item" style="background:var(--surface);">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <div class="contact-item-label">Office Location</div>
+                <div class="contact-item-value">Peshawar, Khyber Pakhtunkhwa</div>
+                <div class="contact-item-sub">Pakistan — Near Peshawar High Court</div>
+              </div>
+            </div>
+            <div class="contact-item" style="background:var(--surface);">
+              <div class="contact-item-icon">📞</div>
+              <div>
+                <div class="contact-item-label">Phone / WhatsApp</div>
+                <div class="contact-item-value">+92 316 0990069</div>
+                <div class="contact-item-sub">Available Mon–Sat during office hours</div>
+              </div>
+            </div>
+            <div class="contact-item" style="background:var(--surface);">
+              <div class="contact-item-icon">📧</div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">contact@advocatejaveria.com</div>
+                <div class="contact-item-sub">Response within 24 hours</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Office Hours Table -->
+          <div style="margin-top:1.5rem;">
+            <div style="font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Office Hours</div>
+            <table class="office-hours-table" aria-label="Office hours schedule">
+              <tbody>
+                <tr><td>Monday</td><td>9:00 AM – 7:00 PM</td></tr>
+                <tr><td>Tuesday</td><td>9:00 AM – 7:00 PM</td></tr>
+                <tr><td>Wednesday</td><td>9:00 AM – 7:00 PM</td></tr>
+                <tr><td>Thursday</td><td>9:00 AM – 7:00 PM</td></tr>
+                <tr><td>Friday</td><td>9:00 AM – 12:30 PM, 2:30 PM – 6:00 PM</td></tr>
+                <tr><td>Saturday</td><td>10:00 AM – 4:00 PM</td></tr>
+                <tr><td>Sunday</td><td>Closed</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="map-placeholder" aria-label="Office location map placeholder">
+            <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="200" fill="#161819"/>
+              <!-- Grid lines (map-like) -->
+              <line x1="0" y1="50"  x2="400" y2="50"  stroke="#2a2d32" stroke-width="1"/>
+              <line x1="0" y1="100" x2="400" y2="100" stroke="#2a2d32" stroke-width="1"/>
+              <line x1="0" y1="150" x2="400" y2="150" stroke="#2a2d32" stroke-width="1"/>
+              <line x1="80"  y1="0" x2="80"  y2="200" stroke="#2a2d32" stroke-width="1"/>
+              <line x1="160" y1="0" x2="160" y2="200" stroke="#2a2d32" stroke-width="1"/>
+              <line x1="240" y1="0" x2="240" y2="200" stroke="#2a2d32" stroke-width="1"/>
+              <line x1="320" y1="0" x2="320" y2="200" stroke="#2a2d32" stroke-width="1"/>
+              <!-- Roads -->
+              <rect x="0" y="95" width="400" height="10" fill="#1e2124"/>
+              <rect x="155" y="0" width="10" height="200" fill="#1e2124"/>
+              <!-- Pin -->
+              <circle cx="200" cy="100" r="18" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.5)" stroke-width="2"/>
+              <circle cx="200" cy="100" r="6" fill="#c9a84c"/>
+              <line x1="200" y1="100" x2="200" y2="125" stroke="#c9a84c" stroke-width="2"/>
+              <text x="200" y="155" text-anchor="middle" font-size="11" fill="rgba(201,168,76,0.6)" font-family="sans-serif">Peshawar, KPK</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Booking Form -->
+      <div class="reveal-right">
+        <!-- Instant WhatsApp CTA -->
+        <div style="background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:var(--radius-lg);padding:1.5rem 2rem;margin-bottom:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+          <div>
+            <div style="font-weight:600;color:#25d366;font-size:0.92rem;margin-bottom:0.3rem;">Prefer instant communication?</div>
+            <div style="font-size:0.82rem;color:var(--silver);">Get a response in minutes via WhatsApp</div>
+          </div>
+          <a href="https://wa.me/923160990069?text=Hello%20Advocate%20Javeria%2C%20I%20would%20like%20to%20book%20a%20legal%20consultation." 
+             class="btn-whatsapp" target="_blank" rel="noopener" style="flex-shrink:0;">
+            Book via WhatsApp
+          </a>
+        </div>
+
+        <!-- Form Divider -->
+        <div class="form-divider">or fill the appointment form below</div>
+
+        <!-- Booking Form -->
+        <div class="appt-form-wrap">
+          <div style="margin-bottom:2rem;">
+            <div class="section-label" style="margin-bottom:0.5rem;">Appointment Request</div>
+            <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--white);">
+              Schedule Your <em style="color:var(--gold);">Consultation</em>
+            </h3>
+            <p style="font-size:0.82rem;color:var(--silver);margin-top:0.5rem;">All fields marked with * are required. Your information is kept strictly confidential.</p>
+          </div>
+
+          <div class="form-success" role="alert" aria-live="polite">
+            ✓ Your appointment request has been submitted successfully! We will contact you within 2 hours to confirm.
+          </div>
+
+          <form class="appointment-form" novalidate aria-label="Appointment booking form">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name *</label>
+                <input type="text" id="name" name="name" class="form-control"
+                       placeholder="Your full name" required autocomplete="name">
+                <span class="form-error">Please enter your full name</span>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" class="form-control"
+                       placeholder="+92 3XX XXXXXXX" required autocomplete="tel">
+                <span class="form-error">Please enter a valid phone number</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-control"
+                     placeholder="your@email.com" required autocomplete="email">
+              <span class="form-error">Please enter a valid email address</span>
+            </div>
+
+            <div class="form-group">
+              <label for="case-type" class="form-label">Case Type *</label>
+              <select id="case-type" name="case-type" class="form-control" required>
+                <option value="" disabled selected>Select your legal matter</option>
+                <option value="family-law">Family Law (Divorce, Custody, Maintenance)</option>
+                <option value="criminal-defense">Criminal Defense (FIR, Bail, Trial)</option>
+                <option value="civil-litigation">Civil Litigation (Contract, Recovery)</option>
+                <option value="property-disputes">Property Disputes (Ownership, Fraud, Encroachment)</option>
+                <option value="corporate-law">Corporate Law (Business, Contracts, SECP)</option>
+                <option value="women-rights">Women's Rights &amp; Protection</option>
+                <option value="inheritance">Inheritance &amp; Succession</option>
+                <option value="other">Other Legal Matter</option>
+              </select>
+              <span class="form-error">Please select your case type</span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="preferred-date" class="form-label">Preferred Date *</label>
+                <input type="date" id="preferred-date" name="preferred-date" class="form-control" required>
+                <span class="form-error">Please select a preferred date</span>
+              </div>
+              <div class="form-group">
+                <label for="preferred-time" class="form-label">Preferred Time</label>
+                <select id="preferred-time" name="preferred-time" class="form-control">
+                  <option value="" disabled selected>Select time slot</option>
+                  <option value="9am">9:00 AM – 10:00 AM</option>
+                  <option value="10am">10:00 AM – 11:00 AM</option>
+                  <option value="11am">11:00 AM – 12:00 PM</option>
+                  <option value="12pm">12:00 PM – 1:00 PM</option>
+                  <option value="2pm">2:00 PM – 3:00 PM</option>
+                  <option value="3pm">3:00 PM – 4:00 PM</option>
+                  <option value="4pm">4:00 PM – 5:00 PM</option>
+                  <option value="5pm">5:00 PM – 6:00 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="consultation-mode" class="form-label">Consultation Mode</label>
+              <select id="consultation-mode" name="consultation-mode" class="form-control">
+                <option value="in-person">In-Person (Peshawar Office)</option>
+                <option value="phone">Phone Call</option>
+                <option value="video">Video Call (WhatsApp / Zoom)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="case-details" class="form-label">Brief Case Description</label>
+              <textarea id="case-details" name="case-details" class="form-control" rows="4"
+                        placeholder="Please briefly describe your legal matter. This helps Advocate Javeria prepare for your consultation. (All information is strictly confidential)"></textarea>
+            </div>
+
+            <div style="margin-bottom:1.5rem;padding:1rem 1.2rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);font-size:0.78rem;color:var(--silver);line-height:1.7;">
+              <strong style="color:var(--white-dim);">🔒 Confidentiality Promise:</strong> All information submitted here is protected by attorney-client privilege and will never be shared with any third party.
+            </div>
+
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+              <button type="submit" class="btn-primary" style="flex:1;justify-content:center;">
+                Submit Appointment Request
+              </button>
+              <button type="button" class="book-whatsapp btn-whatsapp" style="flex-shrink:0;">
+                Send via WhatsApp
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Features -->
+        <div class="appt-features" style="margin-top:2rem;">
+          <div class="appt-feature reveal delay-1">
+            <span class="appt-feature-icon">🔒</span>
+            <div>
+              <div class="appt-feature-title">100% Confidential</div>
+              <div class="appt-feature-desc">Everything discussed is protected by strict attorney-client privilege.</div>
+            </div>
+          </div>
+          <div class="appt-feature reveal delay-2">
+            <span class="appt-feature-icon">⚡</span>
+            <div>
+              <div class="appt-feature-title">Fast Response</div>
+              <div class="appt-feature-desc">Confirmation within 2 hours during office hours — often sooner via WhatsApp.</div>
+            </div>
+          </div>
+          <div class="appt-feature reveal delay-3">
+            <span class="appt-feature-icon">🌐</span>
+            <div>
+              <div class="appt-feature-title">In-Person or Remote</div>
+              <div class="appt-feature-desc">Visit our Peshawar office or consult via phone/video from anywhere in Pakistan or abroad.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL SNIPPET -->
+<section style="background:var(--deep);padding:5rem 0;">
+  <div class="container-sm text-center">
+    <div class="section-label reveal" style="justify-content:center;">Client Experience</div>
+    <blockquote style="font-family:var(--font-serif);font-size:1.4rem;font-style:italic;color:var(--white);line-height:1.7;margin:1.5rem 0;" class="reveal">
+      "From my very first call, Advocate Javeria made me feel heard, respected, and confident 
+      that my case was in the best possible hands. The process was smooth, transparent, 
+      and ultimately successful."
+    </blockquote>
+    <div class="gold-rule"></div>
+    <div style="font-size:0.85rem;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;" class="reveal">
+      — Family Law Client, Peshawar, 2024
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT INFO SECTION (replaces contact page) -->
+<section style="background:var(--black);padding:5rem 0;" aria-labelledby="contact-info-heading">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Reach Us Directly</div>
+      <h2 class="section-title" id="contact-info-heading">Other Ways to <em>Get in Touch</em></h2>
+      <p class="section-subtitle">Prefer to call, email, or visit in person? We are always available through these channels.</p>
+    </div>
+
+    <div class="why-grid" style="margin-top:2.5rem;">
+
+      <!-- Phone -->
+      <a href="tel:+923160990069" style="text-decoration:none;" class="reveal delay-1">
+        <div class="why-card" style="text-align:center;cursor:pointer;">
+          <div class="why-icon">📞</div>
+          <h3 class="why-title">Call Us</h3>
+          <p class="why-desc" style="margin-bottom:1rem;">Speak directly with our office for immediate assistance.</p>
+          <div style="font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:0.05em;">+92 316 0990069</div>
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.3rem;">Mon – Sat · 9 AM – 7 PM</div>
+        </div>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/923160990069?text=Hello%20Advocate%20Javeria%2C%20I%20need%20legal%20consultation." target="_blank" rel="noopener" style="text-decoration:none;" class="reveal delay-2">
+        <div class="why-card" style="text-align:center;cursor:pointer;">
+          <div class="why-icon">💬</div>
+          <h3 class="why-title">WhatsApp</h3>
+          <p class="why-desc" style="margin-bottom:1rem;">Fastest way to reach us — get a response in minutes during office hours.</p>
+          <div style="font-size:1rem;font-weight:600;color:#25d366;letter-spacing:0.05em;">+92 316 0990069</div>
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.3rem;">Usually replies within minutes</div>
+        </div>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:contact@advocatejaveria.com" style="text-decoration:none;" class="reveal delay-3">
+        <div class="why-card" style="text-align:center;cursor:pointer;">
+          <div class="why-icon">📧</div>
+          <h3 class="why-title">Email Us</h3>
+          <p class="why-desc" style="margin-bottom:1rem;">Send a detailed message and receive a thorough written response.</p>
+          <div style="font-size:0.92rem;font-weight:600;color:var(--gold);letter-spacing:0.03em;">contact@advocatejaveria.com</div>
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.3rem;">Response within 24 hours</div>
+        </div>
+      </a>
+
+      <!-- Office -->
+      <div class="why-card reveal delay-4" style="text-align:center;">
+        <div class="why-icon">📍</div>
+        <h3 class="why-title">Visit Our Office</h3>
+        <p class="why-desc" style="margin-bottom:1rem;">Walk in or schedule a visit at our Peshawar chambers.</p>
+        <div style="font-size:0.92rem;font-weight:600;color:var(--gold);">Peshawar, KPK</div>
+        <div style="font-size:0.78rem;color:var(--silver);margin-top:0.3rem;">Near Peshawar High Court<br>Pakistan</div>
+      </div>
+
+    </div>
+
+    <!-- Office hours strip -->
+    <div style="margin-top:3rem;padding:2rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;" class="reveal">
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <span style="font-size:1.3rem;">🕐</span>
+        <div>
+          <div style="font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);">Office Hours</div>
+          <div style="font-size:0.92rem;color:var(--white);margin-top:0.2rem;">Mon – Sat: 9:00 AM – 7:00 PM &nbsp;|&nbsp; Friday: 9 AM–12:30 PM · 2:30–6 PM &nbsp;|&nbsp; Sunday: Closed</div>
+        </div>
+      </div>
+      <div id="appt-office-status"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Advocate Javeria</div>
+        <div class="footer-logo-tag">Legal Counsel · Peshawar, Pakistan</div>
+        <p class="footer-about">A premier legal practice committed to justice, integrity, and excellence across Pakistan's courts. Your rights, fiercely defended.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+          <a href="https://wa.me/923160990069" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html"           class="footer-link">Home</a></li>
+          <li><a href="about.html"           class="footer-link">About Advocate Javeria</a></li>
+          <li><a href="practice-areas.html"  class="footer-link">Practice Areas</a></li>
+          <li><a href="case-results.html"    class="footer-link">Case Results</a></li>
+          <li><a href="legal-insights.html"  class="footer-link">Legal Insights</a></li>
+          <li><a href="appointment.html"     class="footer-link">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Practice Areas</h3>
+        <ul class="footer-links">
+          <li><a href="practice-areas.html" class="footer-link">Family Law</a></li>
+          <li><a href="practice-areas.html" class="footer-link">Criminal Defense</a></li>
+          <li><a href="practice-areas.html" class="footer-link">Civil Litigation</a></li>
+          <li><a href="practice-areas.html" class="footer-link">Property Disputes</a></li>
+          <li><a href="practice-areas.html" class="footer-link">Corporate Law</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Contact</h3>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span>Peshawar, Khyber Pakhtunkhwa, Pakistan</span></div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📧</span><span>contact@advocatejaveria.com</span></div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span>+92 316 0990069</span></div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">🕐</span><span>Mon – Sat: 9:00 AM – 7:00 PM</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Advocate Javeria. All rights reserved. Peshawar, Pakistan.</p>
+      <p class="footer-dev">Designed &amp; Developed by <a href="https://sneakycoders.com" target="_blank" rel="noopener noreferrer">sneakycoders.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div class="whatsapp-float" aria-label="Contact via WhatsApp">
+  <span class="whatsapp-tooltip">Chat with Advocate Javeria</span>
+  <a href="https://wa.me/923160990069?text=Hello%20Advocate%20Javeria%2C%20I%20would%20like%20to%20book%20a%20legal%20consultation."
+     class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+  // Set minimum date to today for date picker
+  (function() {
+    const dateInput = document.getElementById('preferred-date');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.min = today;
+    }
+
+    // Highlight today in office hours table
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const todayName = days[new Date().getDay()];
+    document.querySelectorAll('.office-hours-table tr').forEach(row => {
+      if (row.cells[0] && row.cells[0].textContent.trim() === todayName) {
+        row.classList.add('today');
+      }
+    });
+  })();
+</script>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie notice">
+  <p class="cookie-text">
+    This website uses cookies to improve your experience and provide essential functionality. 
+    All data is handled with strict confidentiality per our privacy policy.
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" id="cookieAccept">Accept</button>
+    <button class="cookie-decline" id="cookieDecline">Decline</button>
+  </div>
+</div>
+
+
+<script>
+  // Page Loader
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var loader = document.getElementById('pageLoader');
+      if (loader) loader.classList.add('hidden');
+    }, 1600);
+  });
+
+  // Back to Top
+  var btt = document.getElementById('backToTop');
+  if (btt) {
+    window.addEventListener('scroll', function() {
+      btt.classList.toggle('visible', window.scrollY > 400);
+    }, {passive: true});
+    btt.addEventListener('click', function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  }
+
+  // Cookie Banner
+  var banner = document.getElementById('cookieBanner');
+  var accepted = localStorage.getItem('cookie_consent');
+  if (banner && !accepted) {
+    setTimeout(function() { banner.classList.add('show'); }, 2000);
+  }
+  document.getElementById('cookieAccept')?.addEventListener('click', function() {
+    localStorage.setItem('cookie_consent', '1');
+    banner.classList.remove('show');
+  });
+  document.getElementById('cookieDecline')?.addEventListener('click', function() {
+    banner.classList.remove('show');
+  });
+</script>
+
+
+<script>
+  // Live office open/closed status on appointment page
+  (function() {
+    var el = document.getElementById('appt-office-status');
+    if (!el) return;
+    var now  = new Date();
+    var day  = now.getDay();
+    var time = now.getHours() + now.getMinutes() / 60;
+    var open = (day >= 1 && day <= 4 && time >= 9 && time < 19) ||
+               (day === 5 && ((time >= 9 && time < 12.5) || (time >= 14.5 && time < 18))) ||
+               (day === 6 && time >= 10 && time < 16);
+    el.innerHTML = '<div class="office-status ' + (open ? 'open' : 'closed') + '">' +
+      (open ? 'Office Open Now' : 'Currently Closed') + '</div>';
+  })();
+</script>
+
+</body>
+</html>
